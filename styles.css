@@ -1,0 +1,42 @@
+body{
+    background-color: green;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    background-image:url(https://t4.ftcdn.net/jpg/00/93/36/49/360_F_93364974_eoos8QGsa9CzTa5hGRRL6EutXMSKgdOA.jpg); 
+    background-size: cover;
+
+}
+
+h1{
+    color: goldenrod;
+}
+
+#message-el{
+    color: whitesmoke;
+    font-weight: bold;
+    font-style: italic;
+    font-size: large;
+}
+
+p{
+    color: white;
+}
+
+.playbtn{
+    color: #0e5f31;
+    width: 150px;
+    background-color: goldenrod;
+    font-weight: bolder;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: larger;
+    border: none;
+    border-radius: 5px;
+}
+
+.playbtn:hover{
+    background-color: rgb(195, 205, 50);
+    color: rgb(3, 49, 3);
+}
