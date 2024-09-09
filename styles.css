@@ -24,7 +24,7 @@ p{
     color: white;
 }
 
-.playbtn{
+.btn{
     color: #0e5f31;
     width: 150px;
     background-color: goldenrod;
@@ -36,7 +36,7 @@ p{
     border-radius: 5px;
 }
 
-.playbtn:hover{
+.btn:hover{
     background-color: rgb(195, 205, 50);
     color: rgb(3, 49, 3);
 }
