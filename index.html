@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BlackJack Game</title>
+    <!-- css below-->
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -17,16 +18,60 @@
         </div>
 
         <div id="txts">
-            <p id="message-El">Want to play?</p>
-            <p id="cards-El">Cards:</p>
-            <p id="sum-El">Sum:</p>
+            <p id="message-El"></p>
+
+            <div id="playerCards">
+                <p id="cards-El">Cards:</p>
+                <p id="sum-El">Sum:</p>
+            </div>
+
+            <div id="dealerCards">
+                <p id="cards-El">Cards:</p>
+                <p id="sum-El">Sum:</p>
+            </div>
+            
         </div>
 
         <div id="btns">
-            <button class="btn" id="play-btn" onclick="startGame()">Play</button>
-            <button class="btn" id="newCard-btn" onclick="newCard()">New Card</button>
             <p id="result-El"></p>
+            <button class="btn" id="play-btn" onclick="renderGame()">Play</button>
+            <button class="btn" id="newCard-btn" onclick="newCard()">New Card</button>
+            <button class="btn" id="stand-btn" onclick="deal()">Deal</button>
             <button class="btn" id="newGame-btn" onclick="newGame()">New Game</button>
+        </div>
+        
+        <h5><button id="rules-btn">Rules</button></h4>
+        <div id="rules">
+            <div id="rules-txt">
+                <h3>Blackjack Rules</h3>
+                <p>Blackjack is a popular card game typically played in casinos. The objective is to beat the dealer by having a hand value as close to 21 as possible without exceeding it. Here are the basic rules:</p>
+                
+                <h4>Card Values</h4>
+                <ul>
+                    <li>Number cards (2-10) are worth their face value.</li>
+                    <li>Face cards (Jack, Queen, King) are worth 10 points.</li>
+                    <li>Aces can be worth either 1 point or 11 points, depending on which value benefits the hand more.</li>
+                </ul>
+                
+                <h4>Gameplay</h4>
+                <ol>
+                    <li>The game starts with each player receiving two cards. The dealer also receives two cards, with one card face up (the "upcard") and one card face down (the "hole card").</li>
+                    <li>Players can choose to "hit" (take an additional card) or "stand" (keep their current hand).</li>
+                    <li>Players can continue to hit until they choose to stand or exceed 21 points (bust).</li>
+                    <li>If a player busts, they lose the round automatically.</li></li>
+                    <li>Once all players have finished, the dealer reveals their hole card and must hit until they reach at least 17 points.</li>
+                    <li>If the dealer busts, all remaining players win. If not, hands are compared to determine the winner.</li>
+                </ol>
+                
+                <h4>Winning</h4>
+                <ul>
+                    <li>If your hand is closer to 21 than the dealer's, you win and are paid 1:1.</li>
+                    <li>If you get a Blackjack (an Ace and a 10-point card) on your first two cards, you typically win 1.5 times your bet.</li>
+                    <li>If the dealer's hand beats yours, you lose your bet.</li>
+                    <li>If you tie with the dealer, it's a "push," and you neither win nor lose your bet.</li>
+                </ul>
+                
+            </div>
         </div>
 
     </div>
