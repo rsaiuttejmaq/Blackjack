@@ -1,16 +1,15 @@
 body{
-    background-color: green;
+    background-color: black; 
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
     color: white;
     font-weight: bold;
-    background-image:url(https://t4.ftcdn.net/jpg/00/93/36/49/360_F_93364974_eoos8QGsa9CzTa5hGRRL6EutXMSKgdOA.jpg); 
     background-size: cover;
 
 }
 
 h1{
-    color: goldenrod;
+    color: rgb(255, 255, 255);
 }
 
 #message-el{
@@ -27,7 +26,7 @@ p{
 .btn{
     color: #0e5f31;
     width: 150px;
-    background-color: goldenrod;
+    background-color: rgb(247, 231, 190);
     font-weight: bolder;
     padding-top: 5px;
     padding-bottom: 5px;
