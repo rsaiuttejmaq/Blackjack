@@ -1,27 +1,42 @@
-//cards
-let firstCard = Math.floor(Math.random() * 13) + 1;
-let secondCard = Math.floor(Math.random() * 13) + 1;
-let extraCard
-extraCard = []
-let i = 0
-extraCard[i] = 0
-let sum = firstCard + secondCard
+// cards
+let cards = []
+let sum
+let i = 1
+
 //status of game
 let hasBlackJack = false
 let isAlive = true
 let state = 1
-//texts
-let resultEL = document.getElementById("message-El")
-let sumEl = document.querySelector("#sum-El")
-let cardsEl = document.querySelector("#cards-El")
+
+//ids
+const resultEL = document.getElementById("message-El")
+const sumEl = document.querySelector("#sum-El")
+const cardsEl = document.querySelector("#cards-El")
+const rulesBtn = document.getElementById('rules-btn')
+const rulesDv= document.getElementById('rules')
 let message = ""
 
+//initializing 
+reset()
+message = "Want to Play ?"
+resultEL.textContent = message
+rulesDv.style.display = 'none'
 
 //functions
-function startGame() {
+function reset() {
+    cards.fill(0)
+    cards[0] = Math.floor(Math.random() * 13) + 1;
+    cards[1] = Math.floor(Math.random() * 13) + 1;
+    sum = cards[0] + cards[1]
+    message = "Click on Play to start the game"
+    resultEL.textContent = message
+    resultEL.style.color = "white"
+}
+
+function renderGame() {
     if (state === 1) {
         state = 3
-        cardsEl.textContent = "Cards: " + firstCard + ", " + secondCard
+        cardsEl.textContent = "Cards: " + cards[0] + ", " + cards[1]
         sumEl.textContent = "Sum: " + sum
         if (sum <= 20) {
             display("Do you want to draw a new card?", true, false)
@@ -31,6 +46,7 @@ function startGame() {
         }
         else {
             display("You are out of the game!", false, false)
+            resultEL.style.color = "red"
         }
 
         console.log(hasBlackJack)
@@ -46,7 +62,7 @@ function startGame() {
         }
         else {
             display("You are out of the game!", false, false)
-            resultEL.style.color="red"
+            resultEL.style.color = "red"
         }
 
         console.log(hasBlackJack)
@@ -70,34 +86,22 @@ function newCard() {
         sumEl.textContent = "Start a New Game"
         return;
     }
-    extraCard[++i] = Math.floor(Math.random() * 13) + 1;
-    sum += extraCard[i]
+    cards[++i] = Math.floor(Math.random() * 13) + 1;
+    sum += cards[i]
 
     sumEl.textContent = "Sum: " + sum
     console.log("Drawing a new card")
-    startGame()
-    cardsEl.textContent += ", " + extraCard[i]
+    renderGame()
+    cardsEl.textContent += ", " + cards[i]
 }
 
 function newGame() {
     state = 1
-    firstCard = 0
-    secondCard = 0
-    sum = firstCard + secondCard
-    extraCard.fill(0)
-    cardsEl.textContent = "Cards: " + firstCard + ", " + secondCard
+    cards.fill(0)
+    sum = cards[0] + cards[1]
+    cardsEl.textContent = "Cards: " + cards[0] + ", " + cards[1]
     sumEl.textContent = "Sum: " + sum
     reset()
-}
-
-function reset() {
-    firstCard = Math.floor(Math.random() * 13) + 1;
-    secondCard = Math.floor(Math.random() * 13) + 1;
-    extraCard.fill(0)
-    sum = firstCard + secondCard
-    message = "Click on Play to start the game"
-    resultEL.textContent = message
-    resultEL.style.color = "white"
 }
 
 function display(message, isAlive, hasBlackJack) {
@@ -106,3 +110,14 @@ function display(message, isAlive, hasBlackJack) {
     isAlive = isAlive
     hasBlackJack = hasBlackJack
 }
+
+// rules visibility
+rulesBtn.addEventListener('click', () => {
+    if (rulesDv.style.display === 'none') {
+        rulesDv.style.display = 'block';
+        rulesBtn.innerHTML="Rules" + "&#8593;"
+    } else {
+        rulesDv.style.display = 'none';
+        rulesBtn.innerHTML="Rules" + "&#8595"
+    }
+});
